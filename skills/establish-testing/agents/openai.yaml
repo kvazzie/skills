@@ -1,0 +1,5 @@
+interface:
+  display_name: "Establish Testing"
+  short_description: "Agree, install, and document project testing"
+policy:
+  allow_implicit_invocation: false

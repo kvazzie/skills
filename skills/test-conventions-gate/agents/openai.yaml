@@ -1,0 +1,3 @@
+interface:
+  display_name: "Test Conventions Gate"
+  short_description: "Stop tests from inventing repository conventions"
