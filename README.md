@@ -4,9 +4,9 @@ Personal agent skills for repository conventions and response formatting.
 
 ## Skills
 
-### `approval-explanation-format`
+### `instruction-explanation-format`
 
-When a skill requires user confirmation or approval, this skill separates the explanation and the quoted requirement from the main response with a Markdown blockquote. It is available for automatic invocation in supporting agents, but selection depends on the agent and is not guaranteed.
+This skill separates explanations of instructions and limitations from the main response with a Markdown blockquote. It is available for automatic invocation in supporting agents, but selection depends on the agent and is not guaranteed.
 
 ### `test-conventions-gate`
 
@@ -28,7 +28,7 @@ Install the skills:
 
 ```bash
 npx skills add kvazzie/skills \
-  --skill approval-explanation-format \
+  --skill instruction-explanation-format \
   --skill test-conventions-gate \
   --skill establish-testing
 ```

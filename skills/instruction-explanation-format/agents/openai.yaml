@@ -1,0 +1,3 @@
+interface:
+  display_name: "Instruction Explanation Format"
+  short_description: "Separate instruction and limitation explanations"
