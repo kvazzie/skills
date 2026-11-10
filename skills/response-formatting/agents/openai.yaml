@@ -1,0 +1,3 @@
+interface:
+  display_name: "Response Formatting"
+  short_description: "Format responses and supporting explanations"

@@ -1,8 +1,12 @@
 # kvazzie/skills
 
-Personal agent skills for making repository conventions explicit before an agent builds on them.
+Personal agent skills for repository conventions and response formatting.
 
 ## Skills
+
+### `response-formatting`
+
+The central skill for response formatting. Its description asks agents to apply it to every response. It separates explanations of instructions and limitations from the main response with a Markdown blockquote. It is available for automatic invocation in supporting agents, but selection depends on the agent and is not guaranteed.
 
 ### `test-conventions-gate`
 
@@ -20,10 +24,11 @@ List the skills:
 npx skills add kvazzie/skills --list
 ```
 
-Install both:
+Install the skills:
 
 ```bash
 npx skills add kvazzie/skills \
+  --skill response-formatting \
   --skill test-conventions-gate \
   --skill establish-testing
 ```
