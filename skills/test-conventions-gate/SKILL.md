@@ -38,13 +38,7 @@ Carry forward anything the user already specified. Prior answers reduce the inte
 
 ## Hand setup to a fresh session
 
-Use the `handoff` skill to create a portable Markdown handoff in the operating system's temporary directory. If `handoff` is unavailable, run:
-
-```bash
-npx skills use mattpocock/skills@handoff
-```
-
-Follow the emitted handoff instructions. Use [outbound-handoff.template.md](outbound-handoff.template.md) as a checklist, not as a schema. Tailor the document to the original task and include:
+Prepare a handoff tailored to the original task. Use [outbound-handoff.template.md](outbound-handoff.template.md) as a checklist, not as a schema. Include:
 
 - the original request and the permanent test it requires;
 - the concrete evidence and reasoning that closed this gate;
@@ -61,11 +55,11 @@ Check the current environment's available tools and instructions for creating a 
 
 When a fresh session can be started, ask the user whether to use the current working tree or a new worktree. Explain that a new worktree starts from a committed revision and does not automatically contain uncommitted changes. Wait for their answer before starting it. If the chosen location cannot access the repository state needed for setup, explain the limitation and agree on how to provide that state before proceeding. Preserve unrelated changes and follow the repository's Git workflow.
 
-Start the fresh session in the chosen location with the handoff and enough context to find the original session. Make sure it can read the handoff, including when sessions do not share a temporary directory. Ask it to interview the user, complete `establish-testing`, and send the completion handoff back through the host's supported mechanism when available. Include the repository and working-tree paths, and for a new worktree ask it to identify its branch and the changes that must be transferred. Report the new session's link or identifier to the user.
+Start the fresh session in the chosen location with the handoff text directly in its initial message and enough context to find the original session. Do not create or reference a temporary handoff file for direct delivery. Ask it to interview the user, complete `establish-testing`, and send the completion handoff text back through the host's supported messaging mechanism when available. Include the repository and working-tree paths, and for a new worktree ask it to identify its branch and the changes that must be transferred. Report the new session's link or identifier to the user.
 
 In T3, when its thread tools and host instructions permit this workflow, use the thread launch tool with an explicit workspace strategy: use the project root or bind the existing worktree to match the current location, or request a new worktree from the appropriate committed base. Capture the originating thread's identity and instruct the setup thread to send the completion handoff back with the thread messaging tool. Use the tools' current documentation for arguments and permissions.
 
-If the host cannot start an interactive session, give the handoff path to the user and ask them to start one. If automatic return is unavailable or fails, ask the user to bring the completion handoff back. Report launch or delivery failures rather than claiming success.
+If the host cannot start an interactive session, or launch fails, use `handoff` to create a portable Markdown handoff in the operating system's temporary directory. If `handoff` is unavailable, run `npx skills use mattpocock/skills@handoff` and follow the emitted instructions. Give the path to the user and ask them to start a fresh session with it. If automatic return is unavailable or fails, ask the user to bring the completion handoff back. Report launch or delivery failures rather than claiming success.
 
 ## Bound the original session
 
