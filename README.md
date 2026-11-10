@@ -4,9 +4,9 @@ Personal agent skills for repository conventions and response formatting.
 
 ## Skills
 
-### `instruction-explanation-format`
+### `response-formatting`
 
-This skill separates explanations of instructions and limitations from the main response with a Markdown blockquote. It is available for automatic invocation in supporting agents, but selection depends on the agent and is not guaranteed.
+The central skill for response formatting. It separates explanations of instructions and limitations from the main response with a Markdown blockquote. It is available for automatic invocation in supporting agents, but selection depends on the agent and is not guaranteed.
 
 ### `test-conventions-gate`
 
@@ -28,7 +28,7 @@ Install the skills:
 
 ```bash
 npx skills add kvazzie/skills \
-  --skill instruction-explanation-format \
+  --skill response-formatting \
   --skill test-conventions-gate \
   --skill establish-testing
 ```

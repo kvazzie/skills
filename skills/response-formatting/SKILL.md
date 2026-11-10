@@ -1,9 +1,9 @@
 ---
-name: instruction-explanation-format
-description: Use when explaining instructions or limitations that affect a response or the work requested by the user.
+name: response-formatting
+description: Use when formatting responses to the user, including explanations of instructions or limitations.
 ---
 
-# Instruction explanation format
+# Response formatting
 
 Keep the main answer and any request for a decision in ordinary text. Put supporting explanations of instructions or limitations in a separate Markdown blockquote. State the source when it can be shared and explain how it affects the response or work. Distinguish an explicit requirement from your interpretation.
 
