@@ -40,9 +40,9 @@ The workflow uses Matt Pocock's `grilling` and `handoff` skills. When either dep
 
 1. An agent reaches `test-conventions-gate` while working on a test.
 2. The skill explains why the repository does not yet provide a safe, unambiguous convention.
-3. It writes a handoff for a fresh session and tells that session to invoke `establish-testing`.
-4. The fresh session settles the decisions with the user and updates the repository.
-5. It writes a return handoff that routes the original session to the relevant parts of `TESTING.md`.
+3. It writes a portable handoff and, when the environment supports it, starts a fresh interactive session after the user chooses the current working tree or a new worktree. Otherwise, the user starts the session with the handoff.
+4. The fresh session invokes `establish-testing`, settles the decisions with the user, and updates the repository.
+5. It returns a handoff to the original session when the environment supports delivery, or gives it to the user to bring back. For a separate worktree, the changes must also be transferred to the original working tree.
 
 The original session may continue production work when the task does not require test-first development. It must leave tests and test infrastructure alone until the setup session finishes.
 

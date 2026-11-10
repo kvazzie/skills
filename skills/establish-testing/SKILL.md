@@ -100,3 +100,5 @@ npx skills use mattpocock/skills@handoff
 Follow the emitted instructions. Use [return-handoff.template.md](return-handoff.template.md) only as a writing aid. Its wording, headings, and ordering are deliberately replaceable; no agent or automation may parse them as an interface.
 
 Keep the return brief. Point the original session to the applicable `TESTING.md` and the exact sections needed for its test. List changed files and verification results. Do not repeat conventions the original session will read from `TESTING.md`.
+
+Use the return route supplied in the outbound handoff if the host supports it. If delivery is unavailable or fails, give the completion handoff to the user for the original session. When the setup used a separate worktree, include its path, branch, and the changes that must be transferred before the original session can use the setup. Do not claim delivery or transfer succeeded without checking.
