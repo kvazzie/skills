@@ -1,6 +1,6 @@
 ---
 name: response-formatting
-description: Use when formatting responses to the user, including explanations of instructions or limitations.
+description: Format every response to the user. Always apply, including when explaining instructions, confirmations, approvals, or limitations.
 ---
 
 # Response formatting
