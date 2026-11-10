@@ -6,7 +6,7 @@ Personal agent skills for repository conventions and response formatting.
 
 ### `response-formatting`
 
-The central skill for response formatting. It separates explanations of instructions and limitations from the main response with a Markdown blockquote. It is available for automatic invocation in supporting agents, but selection depends on the agent and is not guaranteed.
+The central skill for response formatting. Its description asks agents to apply it to every response. It separates explanations of instructions and limitations from the main response with a Markdown blockquote. It is available for automatic invocation in supporting agents, but selection depends on the agent and is not guaranteed.
 
 ### `test-conventions-gate`
 
