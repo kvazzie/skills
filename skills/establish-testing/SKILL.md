@@ -91,12 +91,10 @@ Handle instruction files as follows:
 
 Completion requires all agreed decisions to be written, the infrastructure to work, and the relevant commands to have been run successfully. If work is blocked, keep working with the current user or report the block in this session. Do not produce a completion handoff with unresolved questions.
 
-Once complete, use `handoff`. If it is unavailable, run:
+Once complete, use [return-handoff.template.md](return-handoff.template.md) only as a writing aid. Its wording, headings, and ordering are deliberately replaceable; no agent or automation may parse them as an interface.
 
-```bash
-npx skills use mattpocock/skills@handoff
-```
+Keep the return brief. Point the original session to the applicable `TESTING.md` and the exact sections needed for its test. List changed files and verification results. When the setup used a separate worktree, include its path, branch, and the changes that must be transferred before the original session can use the setup. Do not repeat conventions the original session will read from `TESTING.md`.
 
-Follow the emitted instructions. Use [return-handoff.template.md](return-handoff.template.md) only as a writing aid. Its wording, headings, and ordering are deliberately replaceable; no agent or automation may parse them as an interface.
+If the outbound handoff provides a supported return route, send the completion handoff text directly through it, without creating or referencing a temporary handoff file. Do not claim delivery or transfer succeeded without checking.
 
-Keep the return brief. Point the original session to the applicable `TESTING.md` and the exact sections needed for its test. List changed files and verification results. Do not repeat conventions the original session will read from `TESTING.md`.
+If direct delivery is unavailable or fails, use `handoff` to create a portable return handoff for the user to bring to the original session. If `handoff` is unavailable, run `npx skills use mattpocock/skills@handoff` and follow the emitted instructions. Report delivery failures.

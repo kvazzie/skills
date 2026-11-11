@@ -22,6 +22,10 @@ Record testing choices the user has already made so the fresh session does not a
 
 Point to the relevant code, manifests, instructions, test files, configuration, CI, and working state. Reference artifacts rather than copying them.
 
+Record the original session's return route when the host supports one, and the chosen working-tree location. For a separate worktree, identify the original working tree and explain what repository state the setup session can access.
+
 ## Completion required
 
 Finish the testing setup, update the repository, verify it, and return a handoff for the original session. Do not return open design questions as a completed result.
+
+Send the completion handoff through the specified return route when available. Otherwise give it to the user to bring back. If using a separate worktree, include its path, branch, and the changes the original session needs to transfer.

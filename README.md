@@ -39,15 +39,15 @@ Use the setup workflow once without installing it:
 npx skills use kvazzie/skills@establish-testing
 ```
 
-The workflow uses Matt Pocock's `grilling` and `handoff` skills. When either dependency is unavailable locally, the agent loads it for one run with `npx skills use mattpocock/skills@<skill>`.
+The workflow uses Matt Pocock's `grilling` skill for the interview and `handoff` when a portable file is needed for manual transfer. When either dependency is unavailable locally, the agent loads it for one run with `npx skills use mattpocock/skills@<skill>`.
 
 ## Flow
 
 1. An agent reaches `test-conventions-gate` while working on a test.
 2. The skill explains why the repository does not yet provide a safe, unambiguous convention.
-3. It writes a handoff for a fresh session and tells that session to invoke `establish-testing`.
-4. The fresh session settles the decisions with the user and updates the repository.
-5. It writes a return handoff that routes the original session to the relevant parts of `TESTING.md`.
+3. When the environment supports it, the agent starts a fresh interactive session with the handoff text after the user chooses the current working tree or a new worktree. Otherwise, it creates a portable handoff file for the user to start the session.
+4. The fresh session invokes `establish-testing`, settles the decisions with the user, and updates the repository.
+5. It returns the handoff text directly to the original session when the environment supports delivery, or creates a portable handoff file for the user to bring back. For a separate worktree, the changes must also be transferred to the original working tree.
 
 The original session may continue production work when the task does not require test-first development. It must leave tests and test infrastructure alone until the setup session finishes.
 
